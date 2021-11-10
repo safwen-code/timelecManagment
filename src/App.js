@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbars from "./components/Layout/Navbars";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import KmInfo from "./components/content/KmContent/KmInfo";
+import AddKm from "./components/content/kmForm/AddKm";
+import Login from "./components/content/Auth/Login";
+import Register from "./components/content/Auth/Register";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbars />
+      <Switch>
+        <div className="container border border-primary mt-5">
+          <Route exact path="/" component={KmInfo} />
+          <Route path="/addkm" component={AddKm} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+        </div>
+      </Switch>
+    </Router>
   );
 }
 
