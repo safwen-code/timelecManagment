@@ -1,7 +1,11 @@
 import React from "react";
 
 const AddSableuseModal = () => {
-  return <div>AddSableuseModal</div>;
+  return (
+    <div>
+     add sableuse info
+    </div>
+  );
 };
 
 export default AddSableuseModal;
