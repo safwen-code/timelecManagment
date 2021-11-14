@@ -17,7 +17,8 @@ const AddUserModal = ({ usersInMachine }) => {
     setForma({ ...Forma, [name]: value });
   };
   const SaveUsers = () => {
-    console.log("form", Forma);
+      const test = usersInMachine.push(Forma)
+    console.log("form", test);
   };
   return (
     <>
