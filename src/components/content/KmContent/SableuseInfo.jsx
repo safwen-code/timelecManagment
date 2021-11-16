@@ -1,15 +1,25 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-const SableuseInfo = () => {
+const SableuseInfo = ({ sableuse }) => {
+  console.log(sableuse);
   return (
     <>
-      <div className=" col border border-dark d-flex justify-content-center">
-        aricle name quantity
-      </div>
-      <div className="row g-2 ms-2 mt-2 mb-3">
-        <div className="col-6 ">other user</div>
-        <div className="col-6 ">other user</div>
-      </div>
+      {sableuse.map((sabl) => {
+        return (
+          <Fragment>
+            <div className=" col border border-dark d-flex justify-content-center">
+              {sabl.articleName}
+            </div>
+            {sabl.usersName.map((user) => {
+              return (
+                <div className="row g-2 ms-2 mt-2 mb-3">
+                  <div className="col-6 ">{user.nameUser}</div>
+                </div>
+              );
+            })}
+          </Fragment>
+        );
+      })}
     </>
   );
 };
