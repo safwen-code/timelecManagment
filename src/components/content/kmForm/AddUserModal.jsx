@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const AddUserModal = ({ usersInMachine }) => {
-  console.log("uesrInMACHINE", usersInMachine);
+const AddUserModal = ({ KMForm }) => {
+  console.log("uesrInMACHINE", KMForm.usersInMachine);
 
   const [Forma, setForma] = useState({
     nameUser: "",
@@ -12,12 +12,13 @@ const AddUserModal = ({ usersInMachine }) => {
   const { nameUser, role, formée } = Forma;
   const hundelChange = (e) => {
     const { name, value } = e.target;
-    console.log("name", name);
-    console.log("value", value);
+    // console.log("name", name);
+    // console.log("value", value);
     setForma({ ...Forma, [name]: value });
   };
   const SaveUsers = () => {
-      const test = usersInMachine.push(Forma)
+    const test = KMForm.usersInMachine.push(Forma);
+    console.log(KMForm.usersInMachine);
     console.log("form", test);
   };
   return (

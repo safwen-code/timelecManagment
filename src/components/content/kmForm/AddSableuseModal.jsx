@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const AddSableuseModal = ({ userInSableuse, setKMForm, KMForm }) => {
-  console.log("userSableuse", userInSableuse);
+const AddSableuseModal = ({ setKMForm, KMForm }) => {
+  console.log("userSableuse", KMForm.userInSableuse);
   // // console.log("setkmForm", setKMForm);
   // console.log("kmform", KMForm);
 
@@ -14,14 +14,17 @@ const AddSableuseModal = ({ userInSableuse, setKMForm, KMForm }) => {
 
   const { nameArticle, quantity, formée, nameUser } = Forma;
 
-  
   const onhundelChange = (e) => {
     const { value, name } = e.target;
     setForma({ ...Forma, [name]: value });
   };
 
-  const saveSableuse = () => {
+  const saveSableuse = (e) => {
+    e.preventDefault();
     console.log("sableuse info", Forma);
+    const test = KMForm.userInSableuse.push(Forma);
+    console.log(KMForm.userInSableuse);
+    console.log("test", test);
   };
   return (
     <div className="row border border-dark">

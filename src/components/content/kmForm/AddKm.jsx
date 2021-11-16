@@ -6,23 +6,23 @@ const AddKm = () => {
     nameArticle: "",
     date: new Date(),
     usersInMachine: [
-      {
-        nameUser: "",
-        role: "",
-        formée: "",
-      },
+      // {
+      //   nameUser: "",
+      //   role: "",
+      //   formée: "",
+      // },
     ],
     userInSableuse: [
-      {
-        nameArticle: "",
-        quantity: "",
-        nameUser: "",
-        formée: "",
-      },
+      // {
+      //   nameArticle: "",
+      //   quantity: "",
+      //   nameUser: "",
+      //   formée: "",
+      // },
     ],
   });
 
-  const { nameArticle, date, usersInMachine, userInSableuse } = KMForm;
+  const { nameArticle, date, usersInMachine } = KMForm;
   const hundelChange = (e) => {
     setKMForm({
       ...KMForm,
@@ -59,14 +59,10 @@ const AddKm = () => {
         />
       </div>
       <div className="row border border-primary mt-2 mb-2 ">
-        <AddUserModal usersInMachine={usersInMachine} setKMForm={setKMForm} />
+        <AddUserModal KMForm={KMForm} setKMForm={setKMForm} />
       </div>
       <div className="row border border-success mb-2">
-        <AddSableuseModal
-          userInSableuse={userInSableuse}
-          setKMForm={setKMForm}
-          KMForm={KMForm}
-        />
+        <AddSableuseModal setKMForm={setKMForm} KMForm={KMForm} />
       </div>
       <button className=" col-4 m-auto btn btn-primary" onClick={addKm}>
         Add
