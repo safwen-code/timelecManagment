@@ -1,0 +1,17 @@
+user.role === "215" && (
+          <div className="col-6 ">
+            {user.name}
+            <span
+              className={`
+            "badge"  ${
+              user.formée === "true" ? " bg-secondary" : "bg-success"
+            }  rounded-2 ps-1 pe-1 ms-3`}
+            >
+              {userInMachine.formée ? (
+                <span>formée</span>
+              ) : (
+                <span>non formée</span>
+              )}
+            </span>
+          </div>
+         )}
