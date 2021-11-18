@@ -7,7 +7,7 @@ import KmContext from "../../../context/kmContext";
 const KmInfo = () => {
   const kmContext = useContext(KmContext);
   const { kmsInfo } = kmContext;
-  console.log("kmsinfo", kmsInfo);
+  // console.log("kmsinfo", kmsInfo);
 
   return (
     <div className="">
