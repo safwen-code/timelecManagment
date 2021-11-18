@@ -4,9 +4,9 @@ import {
   SET_CURRENT_KM,
   CLEAR_CURRENT_KM,
   UPDATE_KM,
-} from "./type";
+} from "./types";
 
-import RducerKm from "./RdeducerKm";
+import KmReducer from "./kmReducer";
 import kmContext from "./kmContext";
 import { useReducer } from "react";
 const StateKm = ({ children }) => {
@@ -20,26 +20,26 @@ const StateKm = ({ children }) => {
         users: [
           {
             id: 1,
-            name: "nader",
+            nameUser: "nader",
             formée: true,
             role: "machine",
           },
           {
             id: 2,
-            name: "rania",
+            nameUser: "rania",
             formée: true,
             role: "215",
           },
           {
             id: 3,
-            name: "safwen",
+            nameUser: "safwen",
             formée: false,
             role: "215",
           },
 
           {
             id: 4,
-            name: "sirine",
+            nameUser: "sirine",
             formée: false,
             role: "215",
           },
@@ -47,8 +47,8 @@ const StateKm = ({ children }) => {
         sableuse: [
           {
             id: 1,
-            articleName: "700/701",
-            usersName: [
+            nameArticle: "700/701",
+            nameUser: [
               {
                 nameUser: "refka",
                 formée: true,
@@ -69,17 +69,18 @@ const StateKm = ({ children }) => {
     loading: true,
     currentKm: null,
   };
-  const [state, dispatch] = useReducer(RducerKm, initialState);
+  const [state, dispatch] = useReducer(KmReducer, initialState);
 
   //add kms
-  const AddKm = (kmForm) => {
-    dispatch({ type: ADD_KM, payload: kmForm });
+  const AddKms = (KMForm) => {
+    dispatch({ type: ADD_KM, payload: KMForm });
+    console.log("add km from state", KMForm);
   };
 
-  //getKms
-  const getAllKms = () => {
-    dispatch({ type: GET_KMS });
-  };
+  // //getKms
+  // const getAllKms = () => {
+  //   dispatch({ type: GET_KMS });
+  // };
 
   //setcurrentKM to edite
   const setCurrentKm = (kminfo) => {
@@ -103,8 +104,8 @@ const StateKm = ({ children }) => {
         kmsInfo: state.kmsInfo,
         loading: state.loading,
         currentKm: state.currentKm,
-        AddKm,
-        getAllKms,
+        AddKms,
+        // getAllKms,
         setCurrentKm,
         clearCurrentKm,
         updateKmInfo,
